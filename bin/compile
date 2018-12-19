@@ -212,7 +212,7 @@ if [[ "${HEROKU_PHP_PLATFORM_REPOSITORIES}" == *" - "* ]]; then
 	s3_url=$(echo "$HEROKU_PHP_PLATFORM_REPOSITORIES" | cut -f1 -d" " | sed 's/[^/]*$//')
 	notice_inline "Bootstrapping using ${s3_url}..."
 fi
-
+status HEROKU_PHP_PLATFORM_REPOSITORIES
 
 # minimal PHP needed for installs, and make "composer" invocations use that for now
 mkdir -p $build_dir/.heroku/php-min
